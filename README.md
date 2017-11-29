@@ -10,14 +10,19 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 ## Load datas and packages
 ```{r Preparations1, include=FALSE}
-require(tidyverse)
+install.packages("tidyverse","readr","randomForest")
+```
+```{r preparation1bis, include=FALSE, echo=TRUE}
+library(tidyverse)
 library(readr)
-train <- read_csv("~/Rprog/train.csv")
-test <- read_csv(file = "~/Rprog/test.csv")
-install.packages("randomForest")
-require(randomForest)
+library(randomForest)
 library(dplyr)
 ```
+```{r preparation1ter: train and test, include=FALSE}
+train<-read_csv("~/Rprog/train.csv")
+test<-read_csv("~/Rprog/test.csv")
+```
+
 # We choose a ML technique : randomForest
 
 ## Prepare the datas
