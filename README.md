@@ -58,9 +58,13 @@ print(Train.fit)
 
 ## Prediction 
 ```{r Prediction, include=TRUE}
-Train.fit$confusion 
+predict.RandomForest<-predict(Train.fit, test)
+LinearRegression<-lm(data=Train3, SalePrice~.)
+predict.LinearRegression<-predict(LinearRegression,test)
+summary(predict.RandomForest)
+summary(predict.LinearRegression)
 ```
-->
+Les résultats sont plus centrées autour de la moyenne lors de la prédiction de RandomForest
 
 # Task 2B: Overfitting in Machine Learning
 
